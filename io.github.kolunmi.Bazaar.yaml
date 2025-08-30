@@ -15,7 +15,7 @@ finish-args:
   # We need directory access to system flatpak installation
   - "--filesystem=/var/lib/flatpak"
   # For flatpak user remotes to work
-  - "--filesystem=xdg-data/flatpak"
+  - "--filesystem=~/.local/share/flatpak/:ro"
   # Needs to talk to host so that installing flatpaks work
   - "--talk-name=org.freedesktop.Flatpak"
   # Can't read flatpaks from the system without this
