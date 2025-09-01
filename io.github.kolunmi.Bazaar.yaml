@@ -41,9 +41,13 @@ modules:
     config-opts:
       - -Dsandboxed_libflatpak=true
     sources:
-      - type: git
-        url: https://github.com/kolunmi/bazaar.git
-        commit: 9f5a2c713790ae956c6450343e9ab9dbbaf7c782
+      - type: archive
+        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.4.5.tar.gz
+        sha256: bcf98d6670dc011ebfd61419c52548a4ea3f6466584c26b2e7f08478c296028d
+        x-checker-data:
+          type: anitya
+          project-id: 379145
+          url-template: https://github.com/kolunmi/bazaar/archive/refs/tags/v$version.tar.gz
       - type: script
         dest-filename: bazaar-launcher
         commands:
