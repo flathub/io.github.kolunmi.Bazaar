@@ -215,8 +215,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/ostreedev/ostree
-                    tag: v2025.5
-                    commit: f4d4659a905a678e97afd1b1530227a5c3652389
+                    tag: v2025.6
+                    commit: 82185d9aaf0a79b100378f13a54c3d5d3763a971
                     x-checker-data:
                       type: anitya
                       project-id: 10899
