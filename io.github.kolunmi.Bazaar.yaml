@@ -42,8 +42,8 @@ modules:
       - -Dsandboxed_libflatpak=true
     sources:
       - type: archive
-        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.4.7.tar.gz
-        sha256: 6a3e0bd9a6137f6859d1185b8ddabde2443ceae0b7d5eebb09f509d0fbc58efe
+        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.4.6.tar.gz
+        sha256: b46505251156d96df4943484223c3e8bf7518aecfba449b457a4ff720a8c7671
         x-checker-data:
           type: anitya
           project-id: 379145
