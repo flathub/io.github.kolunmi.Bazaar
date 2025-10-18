@@ -44,13 +44,15 @@ modules:
       - -Dhardcoded_content_config_path=/run/host/etc/bazaar/config.yaml
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
-      - type: archive
-        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.5.6.tar.gz
-        sha256: 37ffd2687dd954a15c07f556efd8d386574a929ba85197bbb14ecc478d4956c8
+      - type: git
+        url: https://github.com/kolunmi/bazaar
+        commit: 99f614c3e996acd80991d63433c009aa77a6d5e3
+        tag: v0.5.6
         x-checker-data:
-          type: anitya
-          project-id: 379145
-          url-template: https://github.com/kolunmi/bazaar/archive/refs/tags/v$version.tar.gz
+          type: git
+          url-template: $version
+          is-main-source: true
+
       # Check `update-deps.sh` to vendor dependencies for this
       - bazaar-cargo-sources.json
       - type: shell
@@ -73,13 +75,14 @@ modules:
       - name: libdex
         buildsystem: meson
         sources:
-          - type: archive
-            url: https://gitlab.gnome.org/GNOME/libdex/-/archive/1.0.0/libdex-1.0.0.tar.gz
-            sha256: b36185e2a51f7b605b67dbea889ee5a487009b10c4ffe4ee57f740e3b746e39c
+          - type: git
+            url: https://gitlab.gnome.org/GNOME/libdex
+            commit: 8319e745635a3f82912466d748883f76ea87a9cd
+            tag: 1.0.0
             x-checker-data:
-              type: anitya
-              project-id: 328356
-              url-template: https://gitlab.gnome.org/GNOME/libdex/-/archive/$version/libdex-$version.tar.gz
+              type: git
+              url-template: $version
+
       - name: flatpak
         buildsystem: meson
         config-opts:
@@ -111,13 +114,14 @@ modules:
         post-install:
           - install -Dpm0755 -t /app/bin /usr/bin/update-{mime,desktop}-database
         sources:
-          - type: archive
-            url: https://github.com/flatpak/flatpak/archive/refs/tags/1.16.1.tar.gz
-            sha256: 281aa7e35efa0899fefaf7eba923e8ff117f7c03726c7f73b2ac296dae2daf37
+          - type: git
+            url: https://github.com/flatpak/flatpak
+            commit: b676905d91aa3c4e524ca663784d4cf085c465d7
+            tag: 1.16.1
             x-checker-data:
-              type: anitya
-              project-id: 6377
-              url-template: https://github.com/flatpak/flatpak/archive/refs/tags/$version.tar.gz
+              type: git
+              url-template: $version
+
         modules:
           - name: python3-pyparsing
             buildsystem: simple
@@ -223,19 +227,21 @@ modules:
                         path: fuse-2.9.2-closefrom.patch
                       - type: file
                         path: fusermount-wrapper.sh
+
               - name: xdg-dbus-proxy
                 buildsystem: meson
                 config-opts:
                   - -Dman=disabled
                   - -Dtests=false
                 sources:
-                  - type: archive
-                    url: https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/0.1.6.tar.gz
-                    sha256: ee9c1d665f4e3b025a83d522d478ff7930070f2817fc2cb446db0dca93c990b1
+                  - type: git
+                    url: https://github.com/flatpak/xdg-dbus-proxy
+                    commit: 1c1989e56f94b9eb3b7567f8a6e8a0aa16cba496
+                    tag: 0.1.6
                     x-checker-data:
-                      type: anitya
-                      project-id: 58434
-                      url-template: https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/$version.tar.gz
+                      type: git
+                      url-template: $version
+
   - name: bubblewrap
     buildsystem: meson
     config-opts:
@@ -243,10 +249,10 @@ modules:
       - -Dselinux=disabled
       - -Dtests=false
     sources:
-      - type: archive
-        url: https://github.com/containers/bubblewrap/archive/refs/tags/v0.11.0.tar.gz
-        sha256: cfeeb15fcc47d177d195f06fdf0847e93ee3aa6bf46f6ac0a141fa142759e2c3
+      - type: git
+        url: https://github.com/containers/bubblewrap
+        commit: 9ca3b05ec787acfb4b17bed37db5719fa777834f
+        tag: v0.11.0
         x-checker-data:
-          type: anitya
-          project-id: 10937
-          url-template: https://github.com/containers/bubblewrap/archive/refs/tags/v$version.tar.gz
+          type: git
+          url-template: $version
