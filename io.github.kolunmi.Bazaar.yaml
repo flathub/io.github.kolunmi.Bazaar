@@ -53,6 +53,9 @@ modules:
           url-template: $version
           is-main-source: true
 
+      - type: patch
+        path: libdex-downgrade.patch
+
       # Check `update-deps.sh` to vendor dependencies for this
       - bazaar-cargo-sources.json
       - type: shell
@@ -72,6 +75,18 @@ modules:
               type: anitya
               project-id: 279929
               tag-template: $version
+
+      - name: libdex
+        buildsystem: meson
+        sources:
+          - type: git
+            url: https://gitlab.gnome.org/GNOME/libdex
+            commit: 259b26b22bc626635a2b156dabd00b6f0d79f249
+            tag: 0.9.1
+            x-checker-data:
+              type: git
+              url-template: $version
+
       - name: flatpak
         buildsystem: meson
         config-opts:
