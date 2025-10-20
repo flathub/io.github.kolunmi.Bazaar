@@ -81,8 +81,8 @@ modules:
         sources:
           - type: git
             url: https://gitlab.gnome.org/GNOME/libdex
-            commit: 259b26b22bc626635a2b156dabd00b6f0d79f249
-            tag: 0.9.1
+            commit: 094958a3780b5ab4652c0547774a1b24862ac25d
+            tag: 0.10.0
             x-checker-data:
               type: git
               url-template: $version
