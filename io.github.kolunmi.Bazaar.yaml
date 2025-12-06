@@ -1,6 +1,6 @@
 id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
-runtime-version: "49"
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: bazaar
 finish-args:
@@ -29,8 +29,8 @@ cleanup:
   - /share/icons/hicolor/icon-theme.cache
   - /share/man
   - /share/pkgconfig
-  - "*.la"
-  - "*.a"
+  - '*.la'
+  - '*.a'
 
 modules:
   - name: bazaar
@@ -55,7 +55,7 @@ modules:
       - name: md4c
         buildsystem: cmake
         config-opts:
-        - "-DBUILD_MD2HTML_EXECUTABLE=Off"
+          - -DBUILD_MD2HTML_EXECUTABLE=Off
         sources:
           - type: git
             url: https://github.com/mity/md4c.git
@@ -63,7 +63,7 @@ modules:
             tag: release-0.5.2
             x-checker-data:
               type: git
-              tag-pattern: '^release-([\d.]+)$'
+              tag-pattern: ^release-([\d.]+)$
 
       - name: flatpak
         buildsystem: meson
@@ -101,8 +101,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/flatpak/flatpak
-            commit: b676905d91aa3c4e524ca663784d4cf085c465d7
-            tag: 1.16.1
+            commit: 0835c0272f3a0389f97b02cad4b208f80fec99ed
+            tag: 1.17.0
             x-checker-data:
               type: git
               url-template: $version
@@ -112,14 +112,14 @@ modules:
           - name: python3-pyparsing
             buildsystem: simple
             cleanup:
-              - "*"
+              - '*'
             build-commands:
               - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}
                 pyparsing
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz
-                sha256: b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be
+                url: https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz
+                sha256: 2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -185,8 +185,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/ostreedev/ostree
-                    tag: v2025.6
-                    commit: 82185d9aaf0a79b100378f13a54c3d5d3763a971
+                    tag: v2025.7
+                    commit: 134d144cb52ff018cfedfb936b661189bccc76e6
                     x-checker-data:
                       type: anitya
                       project-id: 10899
