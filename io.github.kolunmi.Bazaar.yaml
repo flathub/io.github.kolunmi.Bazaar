@@ -47,8 +47,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/kolunmi/bazaar
-        commit: 42c73d9e343eae63c7cfcebaa504a9245ea32257
-        tag: v0.7.3
+        commit: c17073349e489eeaafe9582501086372d8fde20c
+        tag: v0.7.5
         x-checker-data:
           type: git
           url-template: $version
@@ -104,8 +104,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/flatpak/flatpak
-            commit: 0835c0272f3a0389f97b02cad4b208f80fec99ed
-            tag: 1.17.0
+            commit: 20599618d623630f7aa38d61a2bb81d86fb25f09
+            tag: 1.17.2
             x-checker-data:
               type: git
               url-template: $version
@@ -121,8 +121,8 @@ modules:
                 pyparsing
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/f2/a5/181488fc2b9d093e3972d2a472855aae8a03f000592dbfce716a512b3359/pyparsing-3.2.5.tar.gz
-                sha256: 2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6
+                url: https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz
+                sha256: 47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -156,8 +156,8 @@ modules:
             sources:
               - type: git
                 url: https://github.com/polkit-org/polkit
-                commit: d627b0d1e1108563658dabe3fb8d2a065e64df10
-                tag: '126'
+                commit: 9e4894c969eecf26a3ba762f4f7a268aa0fb3e51
+                tag: '127'
                 x-checker-data:
                   type: git
                   tag-pattern: ^([\d.]+)$
