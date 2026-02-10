@@ -11,6 +11,8 @@ finish-args:
   - --device=dri
   # We need directory access to system flatpak installation
   - --filesystem=/var/lib/flatpak
+  # We need directory access to user flatpak installation
+  - --filesystem=xdg-data/flatpak
   # Needs to talk to host so that installing flatpaks work
   - --talk-name=org.freedesktop.Flatpak
   # Can't read flatpaks from the system without this
@@ -47,8 +49,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/kolunmi/bazaar
-        commit: e0063973ac75848c740dffaab3d3ae420de2dbf3
-        tag: v0.7.7
+	commit: 7b9c8e150bca3e7833d5cebf7a0b502ca86be879
+        tag: v0.7.8
         x-checker-data:
           type: git
           url-template: $version
