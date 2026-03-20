@@ -41,12 +41,12 @@ modules:
   - name: blueprint-compiler
     buildsystem: meson
     cleanup:
-      - "*"
+      - '*'
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/blueprint-compiler.git
-        commit: aa5298cc1677cf855bd61f9671607362bd203f4f
-        tag: v0.20.0
+        commit: 9731bc1a80986452073c7453bb01e21854696f26
+        tag: v0.20.3
         x-checker-data:
           type: git
           url-template: $version
@@ -95,9 +95,9 @@ modules:
             tag: 0.12.0
           - type: shell
             commands:
-              - "sed -i \"/subdir('tests')/d\" libmalcontent/meson.build"
-              - "sed -i \"/subdir('tests')/d\" meson.build"
-              - "sed -i \"/subdir('pam')/d\" meson.build"
+              - sed -i "/subdir('tests')/d" libmalcontent/meson.build
+              - sed -i "/subdir('tests')/d" meson.build
+              - sed -i "/subdir('pam')/d" meson.build
 
       - name: flatpak
         buildsystem: meson
@@ -134,8 +134,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/flatpak/flatpak
-            commit: 20599618d623630f7aa38d61a2bb81d86fb25f09
-            tag: 1.17.2
+            commit: 13b26a94a3bd6fec309a16982a3a80d83776d7ac
+            tag: 1.17.3
             x-checker-data:
               type: git
               url-template: $version
