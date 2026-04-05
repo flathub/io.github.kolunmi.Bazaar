@@ -41,12 +41,12 @@ modules:
   - name: blueprint-compiler
     buildsystem: meson
     cleanup:
-      - "*"
+      - '*'
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/blueprint-compiler.git
-        commit: aa5298cc1677cf855bd61f9671607362bd203f4f
-        tag: v0.20.0
+        commit: 31b62c24a72c1670d2d93dcdf2d130f1ae12778e
+        tag: v0.20.4
         x-checker-data:
           type: git
           url-template: $version
@@ -95,9 +95,9 @@ modules:
             tag: 0.12.0
           - type: shell
             commands:
-              - "sed -i \"/subdir('tests')/d\" libmalcontent/meson.build"
-              - "sed -i \"/subdir('tests')/d\" meson.build"
-              - "sed -i \"/subdir('pam')/d\" meson.build"
+              - sed -i "/subdir('tests')/d" libmalcontent/meson.build
+              - sed -i "/subdir('tests')/d" meson.build
+              - sed -i "/subdir('pam')/d" meson.build
 
       - name: flatpak
         buildsystem: meson
@@ -134,8 +134,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/flatpak/flatpak
-            commit: 20599618d623630f7aa38d61a2bb81d86fb25f09
-            tag: 1.17.2
+            commit: 13b26a94a3bd6fec309a16982a3a80d83776d7ac
+            tag: 1.17.3
             x-checker-data:
               type: git
               url-template: $version
@@ -167,11 +167,12 @@ modules:
             cleanup:
               - '*'
             build-commands:
-              - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} babel
+              - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}
+                babel
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/77/f5/21d2de20e8b8b0408f0681956ca2c69f1320a3848ac50e6e7f39c6159675/babel-2.18.0-py3-none-any.whl
-                sha256: e2b422b277c2b9a9630c1d7903c2a00d0830c409c59ac8cae9081c92f1aeba35
+                url: https://files.pythonhosted.org/packages/7d/b2/51899539b6ceeeb420d40ed3cd4b7a40519404f9baf3d4ac99dc413a834b/babel-2.18.0.tar.gz
+                sha256: b80b99a14bd085fcacfa15c9165f651fbb3406e66cc603abf11c5750937c992d
                 x-checker-data:
                   type: pypi
                   name: babel
@@ -279,8 +280,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/containers/bubblewrap
-        commit: 9ca3b05ec787acfb4b17bed37db5719fa777834f
-        tag: v0.11.0
+        commit: 124c4cdf4321f63ef17a1cb0ce8f9dd45bd7adbe
+        tag: v0.11.1
         x-checker-data:
           type: git
           url-template: $version
