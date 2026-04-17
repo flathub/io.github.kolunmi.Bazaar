@@ -62,8 +62,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/bazaar-org/bazaar
-        commit: cf24df0aa7ccbbbe79a2089391668eb8fb6b99f0
-        tag: v0.7.14
+        commit: 5c2e989f33abe5a9c611ed37aa266c02f41cace9
+        tag: v0.7.15
         x-checker-data:
           type: git
           url-template: $version
@@ -167,8 +167,8 @@ modules:
             cleanup:
               - '*'
             build-commands:
-              - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation
-                babel
+              - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}
+                --no-build-isolation babel
             sources:
               - type: file
                 url: https://files.pythonhosted.org/packages/7d/b2/51899539b6ceeeb420d40ed3cd4b7a40519404f9baf3d4ac99dc413a834b/babel-2.18.0.tar.gz
