@@ -62,8 +62,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/bazaar-org/bazaar
-        commit: cf24df0aa7ccbbbe79a2089391668eb8fb6b99f0
-        tag: v0.7.14
+        commit: 5c2e989f33abe5a9c611ed37aa266c02f41cace9
+        tag: v0.7.15
         x-checker-data:
           type: git
           url-template: $version
@@ -167,7 +167,11 @@ modules:
             cleanup:
               - '*'
             build-commands:
+<<<<<<< update-master-5311802
               - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}
+=======
+              - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation
+>>>>>>> master
                 babel
             sources:
               - type: file
@@ -223,8 +227,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/ostreedev/ostree
-                    tag: v2025.7
-                    commit: 134d144cb52ff018cfedfb936b661189bccc76e6
+                    tag: v2026.1
+                    commit: 84fcfe17adcc69b926e8205782c1f735c09bfdd9
                     x-checker-data:
                       type: anitya
                       project-id: 10899
