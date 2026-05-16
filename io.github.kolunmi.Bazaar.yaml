@@ -62,8 +62,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/bazaar-org/bazaar
-        commit: 5c2e989f33abe5a9c611ed37aa266c02f41cace9
-        tag: v0.7.15
+        commit: e20d8c71133d3b82dbb6a75e960a79682ba82400
+        tag: v0.8.0
         x-checker-data:
           type: git
           url-template: $version
