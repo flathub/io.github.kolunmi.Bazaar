@@ -131,8 +131,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/flatpak/flatpak
-            commit: 8726a5aef7b26dc9574dc0556b3b7e6bd4dd71ec
-            tag: 1.18.2
+            commit: 346b41f2e91bff14de940704302625c517d856b2
+            tag: 1.18.3
             x-checker-data:
               type: git
               tag-pattern: ^(1\.[0-8][02468]\..*)$
@@ -148,8 +148,8 @@ modules:
                 pyparsing
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz
-                sha256: c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc
+                url: https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz
+                sha256: 928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -265,8 +265,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/flatpak/xdg-dbus-proxy
-                    commit: f0fe358bb3a864a722f348cb942f30a29aafb9b2
-                    tag: 0.1.8
+                    commit: 72b40c8f6d9d585cfbdb249690724f740d207087
+                    tag: 0.1.9
                     x-checker-data:
                       type: git
                       url-template: $version
@@ -280,8 +280,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/containers/bubblewrap
-        commit: 2a76602a8c71f36c1527cf9fc3417d9149822e0c
-        tag: v0.12.0
+        commit: 719a4fd474d44b26906bcf2b1b0fb6eddd8d56d0
+        tag: v0.13.0
         x-checker-data:
           type: git
           url-template: $version
