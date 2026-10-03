@@ -123,8 +123,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/ximion/appstream.git
-            commit: ce52fb058e06f1f36320911e93e6773c6e3fe82e
-            tag: v1.2.0
+            commit: 4e3a4de973810e25bbada1b822185ed4d90eb1f5
+            tag: v1.2.1
             x-checker-data:
               type: anitya
               project-id: 10385
@@ -194,8 +194,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/flatpak/flatpak
-            commit: 8726a5aef7b26dc9574dc0556b3b7e6bd4dd71ec
-            tag: 1.18.2
+            commit: a02d0ba48abe9aacc377de15699e5d8c024b5669
+            tag: 1.18.4
             x-checker-data:
               type: git
               tag-pattern: ^(1\.[0-8][02468]\..*)$
@@ -329,8 +329,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/flatpak/xdg-dbus-proxy
-                    commit: f0fe358bb3a864a722f348cb942f30a29aafb9b2
-                    tag: 0.1.8
+                    commit: 72b40c8f6d9d585cfbdb249690724f740d207087
+                    tag: 0.1.9
                     x-checker-data:
                       type: git
                       url-template: $version
@@ -344,8 +344,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/containers/bubblewrap
-        commit: 2a76602a8c71f36c1527cf9fc3417d9149822e0c
-        tag: v0.12.0
+        commit: 719a4fd474d44b26906bcf2b1b0fb6eddd8d56d0
+        tag: v0.13.0
         x-checker-data:
           type: git
           url-template: $version
