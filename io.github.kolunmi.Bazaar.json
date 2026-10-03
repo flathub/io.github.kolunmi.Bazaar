@@ -50,6 +50,49 @@
       ],
       "modules": [
         {
+          "name": "md4c",
+          "buildsystem": "cmake",
+          "config-opts": [
+            "-DBUILD_MD2HTML_EXECUTABLE=Off"
+          ],
+          "sources": [
+            {
+              "type": "git",
+              "url": "https://github.com/mity/md4c.git",
+              "commit": "472c417005c2c71b8617de4f7b8d6b30411d78f4",
+              "tag": "release-0.5.3",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^release-([\\d.]+)$"
+              }
+            }
+          ]
+        },
+        {
+          "name": "malcontent",
+          "buildsystem": "meson",
+          "config-opts": [
+            "-Dui=disabled",
+            "-Dinstalled_tests=false"
+          ],
+          "sources": [
+            {
+              "type": "git",
+              "url": "https://gitlab.freedesktop.org/pwithnall/malcontent.git",
+              "commit": "3ba80995bb25b7aeda7e21d547f9e39ff9a81736",
+              "tag": "0.12.0"
+            },
+            {
+              "type": "shell",
+              "commands": [
+                "sed -i \"/subdir('tests')/d\" libmalcontent/meson.build",
+                "sed -i \"/subdir('tests')/d\" meson.build",
+                "sed -i \"/subdir('pam')/d\" meson.build"
+              ]
+            }
+          ]
+        },
+        {
           "name": "libxmlb",
           "buildsystem": "meson",
           "config-opts": [
@@ -135,49 +178,6 @@
                 "project-id": 10385,
                 "tag-template": "v$version"
               }
-            }
-          ]
-        },
-        {
-          "name": "md4c",
-          "buildsystem": "cmake",
-          "config-opts": [
-            "-DBUILD_MD2HTML_EXECUTABLE=Off"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/mity/md4c.git",
-              "commit": "472c417005c2c71b8617de4f7b8d6b30411d78f4",
-              "tag": "release-0.5.3",
-              "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^release-([\\d.]+)$"
-              }
-            }
-          ]
-        },
-        {
-          "name": "malcontent",
-          "buildsystem": "meson",
-          "config-opts": [
-            "-Dui=disabled",
-            "-Dinstalled_tests=false"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://gitlab.freedesktop.org/pwithnall/malcontent.git",
-              "commit": "3ba80995bb25b7aeda7e21d547f9e39ff9a81736",
-              "tag": "0.12.0"
-            },
-            {
-              "type": "shell",
-              "commands": [
-                "sed -i \"/subdir('tests')/d\" libmalcontent/meson.build",
-                "sed -i \"/subdir('tests')/d\" meson.build",
-                "sed -i \"/subdir('pam')/d\" meson.build"
-              ]
             }
           ]
         },
