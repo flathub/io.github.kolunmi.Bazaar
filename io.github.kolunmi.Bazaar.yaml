@@ -1,6 +1,6 @@
 id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: bazaar-daemon
 finish-args:
@@ -49,23 +49,86 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/World/bazaar.git
-        commit: 2c8c34e73bc855a81b9e35aa70f691bae2d50892
+        commit: 02c961c0d76eb9275ee506741f68d94f8ad1bb40
 
     modules:
-      - name: libdex
+      - name: libxmlb
         buildsystem: meson
         config-opts:
-          - --buildtype=debugoptimized
-          - -Ddocs=false
-          - -Dintrospection=enabled
-          - -Dexamples=false
-          - -Dtests=false
-          - -Dsysprof=false
+          - -Dstemmer=false
+          - -Dintrospection=false
+          - -Dgtkdoc=false
         sources:
           - type: git
-            url: https://gitlab.gnome.org/GNOME/libdex.git
-            commit: 26d094f2d7a4561862cce3efa00bb5aa1e4b0720
-            tag: 1.2.beta
+            url: https://github.com/hughsie/libxmlb.git
+            commit: d942cd68a7d78e35b312b9299e69f68f9cd2e503
+            tag: 0.3.29
+            x-checker-data:
+              type: anitya
+              project-id: 179028
+              tag-template: $version
+
+      - name: libyaml
+        buildsystem: autotools
+        sources:
+          - type: git
+            url: https://github.com/yaml/libyaml
+            commit: 2c891fc7a770e8ba2fec34fc6b545c672beb37e6
+            tag: 0.2.5
+            x-checker-data:
+              type: anitya
+              project-id: 1800
+              tag-template: $version
+
+      - name: check
+        buildsystem: cmake-ninja
+        cleanup:
+          - '*'
+        sources:
+          - type: git
+            url: https://github.com/libcheck/check
+            tag: 0.15.2
+            commit: 11970a7e112dfe243a2e68773f014687df2900e8
+            x-checker-data:
+              type: git
+              tag-pattern: ^([\d.]+)$
+
+      - name: libfyaml
+        buildsystem: cmake-ninja
+        config-opts:
+          - -DENABLE_NETWORK=OFF
+          - -DENABLE_LIBCLANG=OFF
+        sources:
+          - type: git
+            url: https://github.com/pantoniou/libfyaml
+            tag: v0.9.6
+            commit: 1ed9bae3b1e5fc57e31a14a2ea12810fdf423473
+            x-checker-data:
+              type: anitya
+              project-id: 383614
+              tag-template: v$version
+
+      - name: appstream
+        buildsystem: meson
+        config-opts:
+          - -Dgir=true
+          - -Dvapi=true
+          - -Ddocs=false
+          - -Dman=false
+          - -Dapidocs=false
+          - -Dstemming=false
+          - -Dblake3-support=false
+          - -Dsystemd=false
+          - -Dbash-completion=false
+        sources:
+          - type: git
+            url: https://github.com/ximion/appstream.git
+            commit: ce52fb058e06f1f36320911e93e6773c6e3fe82e
+            tag: v1.2.0
+            x-checker-data:
+              type: anitya
+              project-id: 10385
+              tag-template: v$version
 
       - name: md4c
         buildsystem: cmake
@@ -148,8 +211,8 @@ modules:
                 pyparsing
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz
-                sha256: c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc
+                url: https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz
+                sha256: 928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -212,6 +275,7 @@ modules:
                     BASH_COMPLETIONSDIR: /app/share/bash-completion/completions
                   config-opts:
                     - --disable-man
+                    - --enable-introspection=no
                     - --with-curl
                     - --without-libsystemd
                 cleanup:
