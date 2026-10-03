@@ -52,6 +52,28 @@ modules:
         commit: 02c961c0d76eb9275ee506741f68d94f8ad1bb40
 
     modules:
+      - name: appstream
+        buildsystem: meson
+        config-opts:
+          - -Dgir=true
+          - -Dvapi=true
+          - -Ddocs=false
+          - -Dman=false
+          - -Dapidocs=false
+          - -Dstemming=false
+          - -Dblake3-support=false
+          - -Dsystemd=false
+          - -Dbash-completion=false
+        sources:
+          - type: git
+            url: https://github.com/ximion/appstream.git
+            commit: ce52fb058e06f1f36320911e93e6773c6e3fe82e
+            tag: v1.2.0
+            x-checker-data:
+              type: anitya
+              project-id: 10385
+              tag-template: v$version
+
       - name: md4c
         buildsystem: cmake
         config-opts:
