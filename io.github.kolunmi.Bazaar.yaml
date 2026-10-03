@@ -1,6 +1,6 @@
 id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: bazaar-daemon
 finish-args:
@@ -49,24 +49,9 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/World/bazaar.git
-        commit: 2c8c34e73bc855a81b9e35aa70f691bae2d50892
+        commit: 02c961c0d76eb9275ee506741f68d94f8ad1bb40
 
     modules:
-      - name: libdex
-        buildsystem: meson
-        config-opts:
-          - --buildtype=debugoptimized
-          - -Ddocs=false
-          - -Dintrospection=enabled
-          - -Dexamples=false
-          - -Dtests=false
-          - -Dsysprof=false
-        sources:
-          - type: git
-            url: https://gitlab.gnome.org/GNOME/libdex.git
-            commit: 26d094f2d7a4561862cce3efa00bb5aa1e4b0720
-            tag: 1.2.beta
-
       - name: md4c
         buildsystem: cmake
         config-opts:
@@ -148,8 +133,8 @@ modules:
                 pyparsing
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz
-                sha256: c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc
+                url: https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz
+                sha256: 928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36
                 x-checker-data:
                   type: pypi
                   name: pyparsing
@@ -212,6 +197,7 @@ modules:
                     BASH_COMPLETIONSDIR: /app/share/bash-completion/completions
                   config-opts:
                     - --disable-man
+                    - --enable-introspection=no
                     - --with-curl
                     - --without-libsystemd
                 cleanup:
