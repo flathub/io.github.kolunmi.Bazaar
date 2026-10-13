@@ -49,7 +49,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/World/bazaar.git
-        commit: 479102bc58a7e1cfd04084fe30118085100bec14
+        commit: 255e3bb443eb9b3c8dd7c1bbb7a185889ba1dc3b
 
     modules:
       - name: libxmlb
