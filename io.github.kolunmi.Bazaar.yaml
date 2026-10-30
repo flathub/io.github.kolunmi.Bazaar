@@ -123,8 +123,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/ximion/appstream.git
-            commit: ce52fb058e06f1f36320911e93e6773c6e3fe82e
-            tag: v1.2.0
+            commit: 61fc6124f15e8cd1eb101806245ce657317feb4a
+            tag: v1.2.2
             x-checker-data:
               type: anitya
               project-id: 10385
@@ -194,8 +194,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/flatpak/flatpak
-            commit: 8726a5aef7b26dc9574dc0556b3b7e6bd4dd71ec
-            tag: 1.18.2
+            commit: a02d0ba48abe9aacc377de15699e5d8c024b5669
+            tag: 1.18.4
             x-checker-data:
               type: git
               tag-pattern: ^(1\.[0-8][02468]\..*)$
@@ -213,13 +213,15 @@ modules:
                 pyparsing
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz
+                url: 
+                  https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz
                 sha256: 928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36
                 x-checker-data:
                   type: pypi
                   name: pyparsing
               - type: file
-                url: https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz
+                url: 
+                  https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz
                 sha256: 18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2
                 x-checker-data:
                   type: pypi
@@ -236,7 +238,8 @@ modules:
                 --no-build-isolation babel
             sources:
               - type: file
-                url: https://files.pythonhosted.org/packages/7d/b2/51899539b6ceeeb420d40ed3cd4b7a40519404f9baf3d4ac99dc413a834b/babel-2.18.0.tar.gz
+                url: 
+                  https://files.pythonhosted.org/packages/7d/b2/51899539b6ceeeb420d40ed3cd4b7a40519404f9baf3d4ac99dc413a834b/babel-2.18.0.tar.gz
                 sha256: b80b99a14bd085fcacfa15c9165f651fbb3406e66cc603abf11c5750937c992d
                 x-checker-data:
                   type: pypi
@@ -264,8 +267,8 @@ modules:
             sources:
               - type: git
                 url: https://github.com/polkit-org/polkit
-                commit: 9e4894c969eecf26a3ba762f4f7a268aa0fb3e51
-                tag: '127'
+                commit: e6373dc19975d8583568c6cd7025d03e682ca956
+                tag: '128'
                 x-checker-data:
                   type: git
                   tag-pattern: ^([\d.]+)$
@@ -289,8 +292,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/ostreedev/ostree
-                    tag: v2026.4
-                    commit: 4f4445a8912f70c604fa84a057a8f4e904e35a24
+                    tag: v2026.5
+                    commit: 7ab59e047031812fc6b3d68cd20d0e110c3bf0a1
                     x-checker-data:
                       type: anitya
                       project-id: 10899
@@ -312,7 +315,8 @@ modules:
                       - install -Dpm0755 ./fusermount-wrapper.sh /app/bin/fusermount
                     sources:
                       - type: archive
-                        url: https://github.com/libfuse/libfuse/releases/download/fuse-2.9.9/fuse-2.9.9.tar.gz
+                        url: 
+                          https://github.com/libfuse/libfuse/releases/download/fuse-2.9.9/fuse-2.9.9.tar.gz
                         sha256: d0e69d5d608cc22ff4843791ad097f554dd32540ddc9bed7638cc6fea7c1b4b5
                       - type: patch
                         path: fuse-2.9.2-namespace-conflict-fix.patch
@@ -331,8 +335,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/flatpak/xdg-dbus-proxy
-                    commit: f0fe358bb3a864a722f348cb942f30a29aafb9b2
-                    tag: 0.1.8
+                    commit: 72b40c8f6d9d585cfbdb249690724f740d207087
+                    tag: 0.1.9
                     x-checker-data:
                       type: git
                       url-template: $version
@@ -346,8 +350,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/containers/bubblewrap
-        commit: 2a76602a8c71f36c1527cf9fc3417d9149822e0c
-        tag: v0.12.0
+        commit: 362936aea0d5c6e70f7af75d2d44b5a914cb4ba2
+        tag: v0.13.1
         x-checker-data:
           type: git
           url-template: $version
